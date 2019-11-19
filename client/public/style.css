@@ -1,0 +1,50 @@
+* {
+  font-family: din-condensed, sans-serif;
+  font-weight: bold;
+}
+
+html {
+  background: black;
+}
+
+body {
+  background-image: url('/img/louiecbg.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.flex-container > a {
+  border: 1px solid #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  text-decoration: none;
+  color: black;
+  background: #ffffffa8;
+  border-radius: 10px;
+}
+
+.flex-container > a:hover {
+  background: #f1f1f1;
+  border: 1px solid white;
+  box-shadow: 0 0 5px 5px #f1f1f1;
+}
+
+.video-list-entry {
+  width: 120px;
+}
+
+.header-banner {
+  width: 80%;
+  /* text-align: center; */
+}
+
+.platform-list > img {
+  height: 50px;
+}
