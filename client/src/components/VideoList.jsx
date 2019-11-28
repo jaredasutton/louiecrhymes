@@ -12,7 +12,7 @@ const VideoList = ({ videos, handleVideoTitleClick }) => {
   ));
 
   return (
-    <div id="video-list" className="video-list flex-container">
+    <div id="video-list" className="video-list grid-container">
       {videoListEntries}
     </div>
   );

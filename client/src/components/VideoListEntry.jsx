@@ -7,10 +7,11 @@ const VideoListEntry = ({ video, handleVideoTitleClick }) => (
   >
     <img
       className="media-object"
-      src={video.snippet.thumbnails.default.url}
+      src={video.snippet.thumbnails.high.url}
       alt={video.snippet.title}
     />
-    {video.snippet.title}
+    <br />
+    <div>{video.snippet.title}</div>
   </a>
 );
 

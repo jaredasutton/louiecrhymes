@@ -7,7 +7,7 @@ export default options => {
     videoEmbeddable: 'true',
     channelId: process.env.YT_CHANNELID,
     order: 'date',
-    maxResults: 10
+    maxResults: 50
   };
   if (options.pageToken) queryData.pageToken = options.pageToken;
   return get('https://www.googleapis.com/youtube/v3/search', {
