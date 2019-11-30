@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const http = require('http');
+const https = require('https');
 const fs = require('fs');
 
 const app = express();
@@ -17,6 +19,18 @@ app.get('/links/:linkfamily', (req, res) => {
   );
 });
 
-app.listen(process.env.PORT, () => {
-  console.log(`App listening on ${process.env.PORT}`);
+https
+  .createServer(
+    {
+      key: fs.readFileSync('/cert/privkey1.pem'),
+      cert: fs.readFileSync('/cert/cert1.pem')
+    },
+    app
+  )
+  .listen(process.env.HTTPS_PORT, function() {
+    console.log(`App listening on ${process.env.HTTPS_PORT}`);
+  });
+
+http.createServer(app).listen(process.env.HTTP_PORT, () => {
+  console.log(`App listening on ${process.env.HTTP_PORT}`);
 });

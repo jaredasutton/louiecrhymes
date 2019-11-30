@@ -1,6 +1,7 @@
 * {
-  font-family: din-condensed, sans-serif;
-  font-weight: bold;
+  font-family: 'BebasNeueBold';
+  font-weight: normal;
+  font-style: normal;
 }
 
 html {
@@ -59,6 +60,7 @@ body {
 
 .video-list-entry div {
   padding: 20px;
+  font-size: 20px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -137,7 +139,7 @@ header {
   }
 
   .video-list {
-    margin-top: 60px;
+    margin-top: 180px;
     width: 80%;
   }
 
@@ -175,5 +177,6 @@ header {
 
   .icon-list {
     margin-bottom: 20px;
+    display: none;
   }
 }

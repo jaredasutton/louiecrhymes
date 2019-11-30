@@ -1,4 +1,6 @@
 import { get } from 'axios';
+import top50 from './fallback/top-50-vids.json';
+
 export default options => {
   let queryData = {
     key: process.env.YT_KEY,
@@ -12,5 +14,7 @@ export default options => {
   if (options.pageToken) queryData.pageToken = options.pageToken;
   return get('https://www.googleapis.com/youtube/v3/search', {
     params: queryData
-  }).then(({ data }) => data.items);
+  })
+    .then(({ data }) => data.items)
+    .catch(err => top50);
 };
