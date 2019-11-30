@@ -11,7 +11,7 @@ const VideoListEntry = ({ video, handleVideoTitleClick }) => (
       alt={video.snippet.title}
     />
     <br />
-    <div>{video.snippet.title}</div>
+    <div dangerouslySetInnerHTML={{ __html: `${video.snippet.title}` }} />
   </a>
 );
 

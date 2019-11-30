@@ -1,12 +1,16 @@
 {
-  "amazonmusic.png": "https://music.amazon.com/artists/B07YDHBVXJ?ref=dm_sh_f99c-5891-dmcp-90a4-b5a27&musicTerritory=US&marketplaceId=ATVPDKIKX0DER",
-  "applemusic.png": "https://music.apple.com/us/artist/louie-c-rhymes/1481175799",
-  "deezer.png": "https://www.deezer.com/artist/74964442?utm_source=deezer&utm_content=artist-74964442&utm_term=3270501544_1574908205&utm_medium=web",
-  "facebook.png": "https://www.facebook.com/LouieCRhymes/",
-  "googleplay.png": "https://play.google.com/music/listen?u=0#/artist/Ae6sin2qkerocd5l5gh2uw3owlm/Louie+C+Rhymes",
-  "instagram.png": "https://www.instagram.com/louiecrhymes/?hl=en",
-  "itunes.png": "https://music.apple.com/us/album/dream-work-feat-lyssa-single/1487032830",
-  "soundcloud.png": "https://soundcloud.com/louiecrhymes",
-  "twitter.png": "https://twitter.com/louiecrhymes",
-  "youtube.png": "https://www.youtube.com/user/OshakesLISI"
+  "social": {
+    "instagram.png": "https://www.instagram.com/louiecrhymes/?hl=en",
+    "facebook.png": "https://www.facebook.com/LouieCRhymes/",
+    "twitter.png": "https://twitter.com/louiecrhymes",
+    "youtube.png": "https://www.youtube.com/user/OshakesLISI"
+  },
+  "platform": {
+    "amazonmusic.png": "https://music.amazon.com/artists/B07YDHBVXJ?ref=dm_sh_f99c-5891-dmcp-90a4-b5a27&musicTerritory=US&marketplaceId=ATVPDKIKX0DER",
+    "applemusic.png": "https://music.apple.com/us/artist/louie-c-rhymes/1481175799",
+    "deezer.png": "https://www.deezer.com/artist/74964442?utm_source=deezer&utm_content=artist-74964442&utm_term=3270501544_1574908205&utm_medium=web",
+    "googleplay.png": "https://play.google.com/music/listen?u=0#/artist/Ae6sin2qkerocd5l5gh2uw3owlm/Louie+C+Rhymes",
+
+    "soundcloud.png": "https://soundcloud.com/louiecrhymes"
+  }
 }
