@@ -8,6 +8,8 @@ const fs = require('fs');
 const app = express();
 
 app.use(express.static(path.resolve(__dirname, '../client/public')));
+app.use(bodyParser.json({ extended: true }));
+
 app.get('/links/:linkfamily', (req, res) => {
   const linkFamily = req.params.linkfamily;
   fs.readdir(
@@ -19,17 +21,25 @@ app.get('/links/:linkfamily', (req, res) => {
   );
 });
 
-https
-  .createServer(
-    {
-      key: fs.readFileSync('/cert/privkey1.pem'),
-      cert: fs.readFileSync('/cert/cert1.pem')
-    },
-    app
-  )
-  .listen(process.env.HTTPS_PORT, function() {
-    console.log(`App listening on ${process.env.HTTPS_PORT}`);
-  });
+app.post('/email-subscription', (req, res) => {
+  res.json(req.body);
+});
+
+try {
+  let key = fs.readFileSync('/cert/privkey1.pem');
+  let cert = fs.readFileSync('/cert/cert1.pem');
+  https
+    .createServer(
+      {
+        key,
+        cert
+      },
+      app
+    )
+    .listen(process.env.HTTPS_PORT, function() {
+      console.log(`App listening on ${process.env.HTTPS_PORT}`);
+    });
+} catch (e) {}
 
 http.createServer(app).listen(process.env.HTTP_PORT, () => {
   console.log(`App listening on ${process.env.HTTP_PORT}`);

@@ -2,6 +2,7 @@
   font-family: 'BebasNeueBold';
   font-weight: normal;
   font-style: normal;
+  text-align: center;
 }
 
 html {
@@ -13,6 +14,79 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+#modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.4);
+  display: grid;
+  grid-template: 1fr 80% 1fr / 1fr 80% 1fr;
+}
+
+#modal-body {
+  background: rgba(0, 0, 0, 0.8);
+  grid-row-start: 2;
+  grid-column-start: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: stretch;
+  color: white;
+  border: 1px solid white;
+}
+
+#modal-content {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#modal-content > #email-signup-box {
+  width: 60%;
+  font-size: 30px;
+  text-align: center;
+}
+
+#email-signup-box > input {
+  font-size: 30px;
+  text-align: left;
+  padding-top: 5px;
+  padding-left: 5px;
+  border-top: 1px solid white;
+  border-left: 0;
+}
+
+#email-signup-box > button {
+  font-size: 30px;
+  padding-top: 5px;
+  background: black;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+#email-signup-box > button:hover {
+  background: white;
+  color: black;
+  border: 1px solid black;
+}
+
+#modal-header {
+  margin: 20px 0;
+}
+
+.modal-header-banner-img {
+  width: 60%;
 }
 
 .flex-container {
@@ -27,7 +101,7 @@ body {
 
 .grid-container {
   display: grid;
-  grid-gap: 10px 5%;
+  gap: 10px 5%;
   grid-template-columns: 30% 30% 30%;
 }
 
@@ -178,5 +252,12 @@ header {
   .icon-list {
     margin-bottom: 20px;
     display: none;
+  }
+
+  #email-signup-box > input {
+    font-size: 20px;
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 5px;
   }
 }

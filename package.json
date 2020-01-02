@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon -r dotenv/config ./server/index.js",
-    "react:dev": "webpack -d --watch"
+    "react:dev": "webpack -d --watch",
+    "start-db:dev": "docker-compose up",
+    "stop-db:dev": "docker-compose down"
   },
   "author": "Jared A Sutton",
   "license": "ISC",
@@ -15,6 +17,7 @@
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^1.7.0",
     "express": "^4.17.1",
+    "mongoose": "^5.8.3",
     "nodemailer": "^6.3.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
