@@ -1,4 +1,4 @@
 module.exports = {
   emailAddress: String,
-  joinDate: Date
+  joinDate: { type: Date, default: new Date() }
 };

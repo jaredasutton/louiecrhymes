@@ -18,7 +18,7 @@ export default function Modal({ children, setVisibility }) {
           />
         </div>
         <div id="modal-content">
-          <EmailSignup />
+          <EmailSignup closeModal={() => setVisibility(false)} />
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@
   font-family: 'BebasNeueBold';
   font-weight: normal;
   font-style: normal;
-  text-align: center;
+  /* text-align: center; */
 }
 
 html {
@@ -51,13 +51,13 @@ body {
   align-content: center;
 }
 
-#modal-content > #email-signup-box {
+#modal-content #email-signup-box {
   width: 60%;
   font-size: 30px;
   text-align: center;
 }
 
-#email-signup-box > input {
+#email-signup-box input {
   font-size: 30px;
   text-align: left;
   padding-top: 5px;
@@ -66,7 +66,7 @@ body {
   border-left: 0;
 }
 
-#email-signup-box > button {
+#email-signup-box button {
   font-size: 30px;
   padding-top: 5px;
   background: black;
@@ -75,7 +75,7 @@ body {
   cursor: pointer;
 }
 
-#email-signup-box > button:hover {
+#email-signup-box button:hover {
   background: white;
   color: black;
   border: 1px solid black;
@@ -83,6 +83,7 @@ body {
 
 #modal-header {
   margin: 20px 0;
+  text-align: center;
 }
 
 .modal-header-banner-img {
@@ -155,8 +156,10 @@ header {
   position: fixed;
   height: 30px;
   font-size: 30px;
-  padding: 20px;
+  padding: 20px 0px;
   top: 0;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
 }
 
 .minibanner.show-false {
@@ -167,7 +170,7 @@ header {
   display: inline-block;
   /* margin-left: 10px; */
   /* margin-right: 10px; */
-  width: 33%;
+  /* width: 33%; */
 }
 
 .minibanner-icons img {
@@ -228,6 +231,7 @@ header {
     font-size: 30px;
     padding: 10px 0 20px 0;
     top: 0;
+    display: block;
   }
 
   .minibanner.show-false {

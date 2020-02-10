@@ -5,11 +5,13 @@ const retrieveAll = function() {
 };
 
 const insertOne = function(emailAddress) {
-  return Subscriber.create({ emailAddress, joinDate: new Date() }).catch(
-    err => {
-      throw Error(err);
-    }
-  );
+  return Subscriber.findOneAndUpdate(
+    { emailAddress },
+    { joinDate: new Date() },
+    { upsert: true }
+  ).catch(err => {
+    throw Error(err);
+  });
 };
 
 module.exports = { retrieveAll, insertOne };

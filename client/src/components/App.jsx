@@ -3,7 +3,12 @@ import AppBody from './AppBody.jsx';
 import Modal from './Modal.jsx';
 
 export default props => {
-  const [modalVisibility, setModalVisibility] = useState(true);
+  const clientHasNoEmailSubscribedToken = !localStorage.getItem(
+    'emailSubscribed'
+  );
+  const [modalVisibility, setModalVisibility] = useState(
+    clientHasNoEmailSubscribedToken
+  );
   return (
     <>
       {modalVisibility && <Modal setVisibility={setModalVisibility} />}

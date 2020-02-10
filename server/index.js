@@ -4,6 +4,7 @@ const path = require('path');
 const http = require('http');
 const https = require('https');
 const fs = require('fs');
+const { emailSubscriptionRouter } = require('./routers/index.js');
 
 const app = express();
 
@@ -21,9 +22,7 @@ app.get('/links/:linkfamily', (req, res) => {
   );
 });
 
-app.post('/email-subscription', (req, res) => {
-  res.json(req.body);
-});
+app.use('/email-subscription', emailSubscriptionRouter);
 
 try {
   let key = fs.readFileSync('/cert/privkey1.pem');
