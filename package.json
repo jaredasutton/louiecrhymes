@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon -r dotenv/config ./server/index.js",
     "react:dev": "webpack -d --watch",
-    "start-db:dev": "docker-compose up",
-    "stop-db:dev": "docker-compose down"
+    "start-db": "docker-compose up",
+    "stop-db": "docker-compose down"
   },
   "author": "Jared A Sutton",
   "license": "ISC",

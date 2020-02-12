@@ -1,9 +1,48 @@
 version: '3.1'
 
 services:
-  mongo:
+  nodejs:
+    image: node
+    container_name: nodejs
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      HTTP_PORT: ${HTTP_PORT}
+      HTTPS_PORT: ${HTTPS_PORT}
+      YT_KEY: ${YT_KEY}
+      YT_CHANNELID: ${YT_CHANNELID}
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_HOST: db
+      MONGO_PORT: 27017
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+      MONGO_PRIMARY_UN: ${MONGO_PRIMARY_UN}
+      MONGO_PRIMARY_PW: ${MONGO_PRIMARY_PW}
+      GOOGLE_APPLICATION_CREDENTIALS: ${GOOGLE_APPLICATION_CREDENTIALS}
+      MAIL_NOTIF_ADDRESS: ${MAIL_NOTIF_ADDRESS}
+      MAIL_NOTIF_PASS: ${MAIL_NOTIF_PASS}
+    ports:
+      - 8080:${HTTP_PORT}
+      - 443:${HTTPS_PORT}
+    volumes:
+      - .:/home/node/app
+      - node_modules:/home/node/app/node_modules
+    networks:
+      - app-network
+    links:
+      - db
+    depends_on:
+      - db
+    #command: ./wait-for.sh db:27017 --timeout=60 -- /home/node/app/node_modules/.bin/nodemon server
+    command: ./wait-for.sh db:27017 --timeout=60 -- node server
+  db:
     image: mongo
-    restart: always
+    container_name: db
+    restart: unless-stopped
+    env_file: .env
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
@@ -12,5 +51,12 @@ services:
       MONGO_PRIMARY_PW: ${MONGO_PRIMARY_PW}
     volumes:
       - '$PWD/db/docker-mongo-entrypoint/:/docker-entrypoint-initdb.d/'
-    ports:
-      - ${MONGO_PORT}:27017
+      - dbdata:/data/db
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge
+volumes:
+  dbdata:
+  node_modules:
