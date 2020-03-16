@@ -9,6 +9,7 @@ const {
 } = process.env;
 console.log(`Preparing to connect to localhost:${MONGO_PORT}`);
 const connectString = `mongodb://${MONGO_PRIMARY_UN}:${MONGO_PRIMARY_PW}@${MONGO_HOST}:${MONGO_PORT}/louiec1`;
+console.log(connectString);
 mongoose.connect(connectString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

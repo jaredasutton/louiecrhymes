@@ -6,12 +6,16 @@ const transporter = nodemailer.createTransport(
 );
 
 module.exports = ({
-  to = `${process.env.MAIL_NOTIF_ADDRESS}@gmail.com`,
+  to = `"Me" ${process.env.MAIL_NOTIF_ADDRESS}@gmail.com`,
+  from = `"LouieCRhymes.com" ${process.env.MAIL_NOTIF_ADDRESS}@gmail.com`,
   subject,
   text,
   html
 }) => {
-  transporter.sendMail({ to, subject, text, html }, function(error, info) {
+  transporter.sendMail({ to, from, subject, text, html }, function(
+    error,
+    info
+  ) {
     if (error) {
       return console.log(error);
     }

@@ -4,7 +4,10 @@ const path = require('path');
 const http = require('http');
 const https = require('https');
 const fs = require('fs');
-const { emailSubscriptionRouter } = require('./routers/index.js');
+const {
+  emailSubscriptionRouter,
+  bannerAdRouter
+} = require('./routers/index.js');
 
 const app = express();
 
@@ -23,6 +26,7 @@ app.get('/links/:linkfamily', (req, res) => {
 });
 
 app.use('/email-subscription', emailSubscriptionRouter);
+app.use('/banner-ad', bannerAdRouter);
 
 try {
   let key = fs.readFileSync('/cert/privkey1.pem');

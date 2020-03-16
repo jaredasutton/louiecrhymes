@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'BebasNeueBold';
+  src: url('/fonts/BebasNeueBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* The following rules are deprecated. */
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('/fonts/BebasNeueBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   font-family: 'BebasNeueBold';
   font-weight: normal;
@@ -64,6 +80,7 @@ body {
   padding-left: 5px;
   border-top: 1px solid white;
   border-left: 0;
+  max-width: 80%;
 }
 
 #email-signup-box button {
@@ -140,9 +157,37 @@ body {
   text-transform: uppercase;
 }
 
+.headline-video {
+  width: 100%;
+  display: block;
+  margin-bottom: 30px;
+  text-align: center;
+  color: white;
+  font-size: 52px;
+  background-position: 1250px -551px;
+  background-size: initial;
+  cursor: pointer;
+}
+
+.headline-video .text {
+  background: black;
+  padding: 10px;
+  font-size: 52px;
+}
+
+.headline-video:hover .text {
+  background: white;
+  color: black;
+}
+
+.headline-video img {
+  width: 100%;
+}
+
 header {
   text-align: center;
   margin-bottom: -20px;
+  display: block;
 }
 
 .header-banner-img {
@@ -189,6 +234,20 @@ header {
   margin-right: 10px;
 }
 
+.banner-ad {
+  margin-bottom: 30px;
+}
+
+.banner-ad a {
+  display: block;
+  width: 50%;
+  text-align: center;
+}
+
+.banner-ad a > img {
+  width: 100%;
+}
+
 @media only screen and (max-width: 800px) {
   body {
     background: none;
@@ -216,7 +275,6 @@ header {
   }
 
   .video-list {
-    margin-top: 180px;
     width: 80%;
   }
 
@@ -263,5 +321,19 @@ header {
     text-align: left;
     padding-top: 5px;
     padding-left: 5px;
+  }
+
+  .headline-video .text {
+    font-size: 32px;
+  }
+
+  header::after {
+    content: '';
+    display: block;
+    height: 180px;
+  }
+
+  .banner-ad a {
+    width: 80%;
   }
 }
