@@ -7,9 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon -r dotenv/config ./server/index.js",
     "react:dev": "webpack -d --watch",
-    "start-db": "docker-compose up",
-    "stop-db": "docker-compose down",
-    "compose-up": "nodemon --watch server --watch client/public -e js,jsx,html,css,json --ignore client/public/dist -x 'webpack ; docker-compose up --build -d'"
+    "remote-compose-down": "export SERVER_ADDR=`grep SERVER_ADDR  .env | cut -d '=' -f 2-`;  docker-compose -H 'ssh://root@'$SERVER_ADDR down",
+    "remote-compose-up": "export SERVER_ADDR=`grep SERVER_ADDR  .env | cut -d '=' -f 2-`; docker-compose -H 'ssh://root@'$SERVER_ADDR up -d",
+    "compose-build": "webpack && export SERVER_ADDR=`grep SERVER_ADDR  .env | cut -d '=' -f 2-`;  docker-compose -H 'ssh://root@'$SERVER_ADDR build --no-cache"
   },
   "author": "Jared A Sutton",
   "license": "ISC",

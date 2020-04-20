@@ -6,7 +6,7 @@ const https = require('https');
 const fs = require('fs');
 const {
   emailSubscriptionRouter,
-  bannerAdRouter
+  bannerAdRouter,
 } = require('./routers/index.js');
 
 const app = express();
@@ -35,11 +35,11 @@ try {
     .createServer(
       {
         key,
-        cert
+        cert,
       },
       app
     )
-    .listen(process.env.HTTPS_PORT, function() {
+    .listen(process.env.HTTPS_PORT, function () {
       console.log(`App listening on ${process.env.HTTPS_PORT}`);
     });
 } catch (e) {}
