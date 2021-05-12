@@ -21,7 +21,7 @@
     "google-auth-library": "^5.10.1",
     "googleapis": "^39.2.0",
     "mongoose": "^5.9.9",
-    "nodemailer": "^6.4.6",
+    "nodemailer": "^6.4.16",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
